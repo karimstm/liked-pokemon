@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.12",
     "@tanstack/react-query": "^4.13.0",
     "@trpc/client": "^10.0.0-proxy-beta.25",
     "@trpc/next": "^10.0.0-proxy-beta.25",

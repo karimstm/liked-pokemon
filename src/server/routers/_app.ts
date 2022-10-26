@@ -6,12 +6,12 @@ export const appRouter = router({
   getPokemon: publicProcedure
     .input(
       z.object({
-        name: z.union([z.string(), z.number()]),
+        q: z.union([z.string(), z.number()]),
       })
     )
-    .query(async ({ input }) => {
+    .mutation(async ({ input }) => {
       const pokemonApi = new PokemonClient();
-      const searchTerm = input.name;
+      const searchTerm = input.q;
       const getPokemon = (searchTerm: string | number) => {
         return typeof searchTerm === "string"
           ? pokemonApi.getPokemonByName(searchTerm)
@@ -22,5 +22,6 @@ export const appRouter = router({
       return pokemon;
     }),
 });
+
 // export type definition of API
 export type AppRouter = typeof appRouter;
